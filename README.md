@@ -17,19 +17,19 @@
 1. Download [Docker Toolbox](https://docs.docker.com/toolbox/overview/) for Windows
 2. After installation type `docker --version` command to the command prompt to ensure that Docker successfully installed to our system or not.
 <p align="center">
-    <img src="./resources/1_version.png">
+    <img src="https://github.com/oktaykcr/SeleniumGridDocker/blob/master/resources/1_version.PNG">
 </p>
 
 3. You need a *Docker machine* to install and run Docker on Mac or Windows. *docker machine* is a tool that lets you install *Docker Engine* on virtual hosts and manage the hosts with `docker-machine` commands.
 - You can list available Docker machines by typing `docker-machine ls`
 <p align="center">
-    <img src="./resources/2_machinelist.png">
+    <img src="https://github.com/oktaykcr/SeleniumGridDocker/blob/master/resources/2_machinelist.PNG">
 </p>
 
 4. There is no Docker machine so we need to create new one.
     `docker-machine create --driver virtualbox default`. This command downloads a lightweight Linux distribution with the Docker daemon and creates and starts a VirtualBox VM with Docker running. Now you can see the installed Docker machine through `docker-machine ls` command.
 <p align="center">
-    <img src="./resources/3_machinelist.png">
+    <img src="https://github.com/oktaykcr/SeleniumGridDocker/blob/master/resources/3_machinelist.PNG">
 </p>
 
 5. You need to connect your shell to the new machine so type this command `eval "$(docker-machine env default)"`. If you are using **cmd.exe** or **Windows Powershell** 'eval' command is not defined so you sould use Docker Quickstart Terminal or **git-bash.exe**.
@@ -41,14 +41,14 @@
     - `docker pull selenium/node-chrome`
     - `docker pull selenium/node-firefox`
 <p align="center">
-    <img src="./resources/4_gridimages.png">
+    <img src="https://github.com/oktaykcr/SeleniumGridDocker/blob/master/resources/4_gridimages.PNG">
 </p>
 
 2. After all installation, you can run your images at a new **Docker Container**. First we need to create and run Selenium Grid Container.
     - `docker run -d -P --name selenium-hub selenium/hub` creates a new container which name is **selenium-hub**. You can specify port number by `-p [NEW_PORT]:4444`.
 	- `docker container ls` list your Docker containers and you can see the selenium-hub container.
 <p align="center">
-    <img src="./resources/5_containerlist.png">
+    <img src="https://github.com/oktaykcr/SeleniumGridDocker/blob/master/resources/5_containerlist.PNG">
 </p>
 
 3. To access the **Selenium Grid Hub page** from your browser, you should enter this URL `http://[docker_machine_ip:PORT]` . *E.g. http://192.168.99.100:32768/*
@@ -62,5 +62,5 @@
     - `docker container ls` or processes `docker ps`. 
     - You can see the chrome and firefox node from your browser.
 <p align="center">
-    <img src="./resources/6_gridpage.png">
+    <img src="https://github.com/oktaykcr/SeleniumGridDocker/blob/master/resources/6_gridpage.PNG">
 </p>
